@@ -1,0 +1,577 @@
+@import "catalog.sass"
+@import "product.sass"
+
+$black: #222222
+$crab: #F16D7F
+
+%flex-between
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+%flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin categories-card($categories-card-img)
+  background: url($categories-card-img)
+  background-repeat: no-repeat
+  background-size: 100%
+
+body
+  font-family: Lato
+  font-style: normal
+  font-weight: normal
+  margin: 0
+  h1
+    font-weight: normal
+  p
+    font-weight: normal
+
+.header
+  background-color: $black
+  padding: 18px 0 19px 0
+  max-height: 75px
+
+.index-html-btn
+  width: 38px
+  margin-right: 40px
+
+.search-btn
+  width: 27px
+
+.container
+  max-width: 1160px
+  width: 100%
+  margin: 0 auto
+
+.header-container
+  @extend %flex-between
+
+.header-ico-size
+  width: 23px
+  height: 33px
+  margin-right: 33px
+
+.header-right
+  @extend %flex-center
+
+.burger 
+  width: 28px
+  height: 23px
+  margin-right: 33px
+  background: none
+  border: none
+  background-image: url(../img/menu-logo.svg)
+  background-repeat: no-repeat
+  cursor: pointer
+
+.overlay 
+  position: absolute
+  left: 0
+  right: 0
+  top: 50px
+  height: 764px
+  margin-top: 24px
+  justify-content: flex-end
+  display: none
+
+.overlay-open 
+  display: flex
+
+.menu 
+  width: 232px
+  background: white
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+  position: relative
+
+.menu-style 
+  font-weight: bold
+  font-size: 14px
+  line-height: 17px
+  color: black
+  text-transform: uppercase
+  margin: 37px 143px 0 34px
+
+.menu-list 
+  list-style-type: none
+  margin: 24px 0 0 33px
+  padding: 0
+  text-transform: uppercase
+
+.menu-list-inside 
+  list-style-type: none
+  font-size: 14px
+  line-height: 17px
+  color: $crab
+
+.menu-inside-item 
+  font-size: 14px
+  line-height: 17px
+  color: #6F6E6E
+
+.menu-close-btn 
+  position: absolute
+  right: 17px
+  top: 16px
+  width: 12px
+  height: 12px
+  background: none
+  border: none
+  background-image: url(../img/menu-close.svg)
+  background-repeat: no-repeat
+  cursor: pointer
+
+.head 
+  background-color: #F1E4E6
+
+.container-logo 
+  min-height: 764px
+  background-image: url(../img/head-man.png)
+  background-repeat: no-repeat
+  background-position: left bottom
+  background-size: contain
+  display: flex
+  flex-direction: row-reverse
+  align-items: center
+  text-transform: uppercase
+
+.logo 
+  border-left: 12px solid $crab
+
+.theBrand 
+  margin: 10px 100px 1px 12px
+  font-weight: 900
+  font-size: 48px
+  line-height: 40px
+  color: $black
+
+.ofLuxerious 
+  font-weight: 700
+  font-size: 32px
+  line-height: 1px
+
+.fashion 
+  color: $crab
+
+.cards 
+  @extend %flex-between
+  flex-wrap: wrap
+
+.categories_cards 
+  margin: 65px 0 30px 0
+  padding: 0
+  @extend %flex-between
+  flex-wrap: wrap
+
+.categories-card 
+  width: 32%
+  height: 260px
+  height: 260px
+  @extend %flex-center
+  flex-direction: column
+
+.tac 
+  text-align: center
+
+.categories-for-womens 
+  @include categories-card("../img/cards/categories-card-for-womens.jpg")
+
+.categories-for-mens 
+  @include categories-card("../img/cards/categories-card-for-mens.jpg")
+
+.categories-for-kids 
+  @include categories-card("../img/cards/categories-card-for-kids.jpg")
+
+.categories-accessories 
+  background: url(../img/cards/categories-card-accessories.jpg)
+  background-repeat: no-repeat
+  background-size: cover
+  margin: 2.4vh 0 100px 0
+  width: 100%
+  height: 180px
+
+.promo_text 
+  font-weight: 400
+  font-size: 16px
+  line-height: 19px
+  color: #FFF
+  margin: 0
+
+.promo_text_red 
+  font-weight: 700
+  font-size: 24px
+  line-height: 28px
+  text-transform: uppercase
+  color: $crab
+  margin: 5px
+
+.card 
+  max-width: 360px
+  outline: 1px red
+  background: #F8F8F8
+  margin: 0 2px 48px 2px
+  /* чтобы при адаптации карточки не прижимались вплотную между собой */
+
+.card-add 
+  padding: 10px 20px
+  background-color: transparent
+  color: #fff
+  border: 1px solid #FFFFFF
+  transition: 0.3s
+  cursor: pointer
+  &:hover
+    transition: 0.3s
+    background-color: #fff
+    color: grey
+
+.card-overlay 
+  background: rgba(58, 56, 56, 0.86)
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  @extend %flex-center
+  opacity: 0
+  transition: 0.5s
+
+.GoodCardImage
+    /* Ширина,высота фото в карточке товара*/
+    position: relative
+    width: 360px
+    height: 420px
+    &:hover .card-overlay 
+        opacity: 1
+
+.h1 
+  font-size: 30px
+  line-height: 36px
+  text-align: center
+  color: $black
+
+.p 
+  font-size: 14px
+  line-height: 17px
+  text-align: center
+  color: #9F9F9F
+
+.cardTextMargin-left 
+  /* Отступ всего текста под карточкой слева */
+  margin-left: 16px
+
+.pCard 
+  /* Параграф(название) карточки под фото */
+  margin-top: 25px 0px 12px 0px
+  font-size: 13px
+  line-height: 16px
+  color: black
+  cursor: pointer
+
+.h1Card 
+  /* Текст под названием карточки под фото */
+  font-weight: 300
+  font-size: 14px
+  line-height: 17px
+  color: #5D5D5D
+  width: 315px
+
+.cardPrice 
+  /* Цена под описанием карточки $52.00 */
+  margin-top: 18px
+  font-size: 16px
+  line-height: 19px
+  color: $crab
+
+.button 
+  /* Кнопка "Показать все продукты" под карточками*/
+  width: 212px
+  height: 48px
+  border: 1px solid #F26376
+  color: #F26376
+  padding: 15px
+  background-color: transparent
+  /* удаляет серый фон кнопки */
+  text-align: center
+  margin: 10px 0 100px 0
+  -webkit-transition-duration: 0.4s
+  transition-duration: 0.4s
+  cursor: pointer
+  &:hover 
+    background-color: #F26376
+    color: white
+
+.footer 
+  background: $black
+  height: 100%
+
+.topFooter 
+  min-height: 341px
+  /* разобраться с высотой блока */
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  align-items: center
+  text-align: center
+
+.features-max-width 
+  max-width: 360px
+  padding-top: 50px
+
+.pFooter 
+  font-weight: 300
+  font-size: 13.972px
+  line-height: 17px
+  color: #FBFBFB
+
+.h1Footer 
+  font-size: 19.96px
+  line-height: 24px
+  color: #FBFBFB
+
+.mediumFooter 
+  background: url(../img/medium-footer.png) no-repeat
+  background-size: cover
+
+.mediumFooterContainer 
+  @extend %flex-between
+  flex-wrap: wrap
+  text-align: center
+  min-height: 448px
+
+.MediumFooterLeft 
+  max-width: 360px
+
+.mediumFooterText 
+  font-weight: 400
+  font-size: 20px
+  line-height: 24px
+  margin-top: 30px
+  text-align: center
+  color: black
+  & > span 
+  font-style: italic
+
+.MediumFooterRightParagraph1 
+  font-weight: bold
+  font-size: 24px
+  line-height: 167.2%
+  color: $black
+  margin: 0
+
+.MediumFooterRightParagraph2 
+  font-size: 18px
+  line-height: 167.2%
+  color: $black
+  margin: 0
+
+.subscribe-form 
+  margin-top: 32px
+  display: flex
+
+.subscribe-form-email 
+  border-bottom-left-radius: 22px
+  border-top-left-radius: 22px
+  padding: 0px 13px
+  width: 256px
+  height: 49px
+  background: white
+  border: none
+  box-sizing: border-box
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  outline: none
+
+.subscribe-form-button 
+  border-bottom-right-radius: 22px
+  border-top-right-radius: 22px
+  padding: 0px 13px
+  width: 100px
+  height: 49px
+  background: $crab
+  color: white
+  border: none
+  box-sizing: border-box
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+  -webkit-transition-duration: 0.4s
+  transition-duration: 0.4s
+  cursor: pointer
+  &:hover 
+    background: #fa4a5f
+    transition: 0.3s
+
+.socials-links 
+  display: flex
+
+.social-links-button 
+  width: 32px
+  height: 32px
+  background: white
+  @extend %flex-center
+  margin-right: 7px
+  cursor: pointer
+  transition: 0.3s
+  &:hover 
+    background: $crab
+    transition: 0.3s
+
+a
+  margin-bottom: -4px
+
+.buttomFooter 
+  min-height: 80px
+  @extend %flex-between
+  text-align: center
+
+
+@media (max-width: 1190px) 
+  /* Версия для десктопа поменьше FUll HD или перевернутого экрана*/
+  .container 
+    max-width: 97vw
+
+  .container-logo 
+    min-height: 50vh
+
+  .card 
+    min-height: 15vh
+
+  .categories-card 
+    height: 20vh
+
+  .cards
+    justify-content: space-evenly
+  
+  .mediumFooterContainer
+    justify-content: space-around
+
+@media (max-width: 768px) 
+  /* Версия для планшета */
+  .container-logo 
+    min-height: 368px
+    background-size: 25%
+    background-position: 22.5% 50%
+  
+  .theBrand 
+    max-width: 45vw
+    margin: 18px 10px 14px 12px
+    font-weight: 850
+    font-size: 44px
+    line-height: 30px
+    color: $black
+  
+  .ofLuxerious 
+    font-weight: 650
+    font-size: 25px
+    line-height: 1px
+  
+  .promo_text 
+    margin: 0 0 8px 0
+
+  .promo_text_red 
+    margin: 0 auto
+
+  .categories_cards 
+    margin: 20px 0 150px 0
+
+  .categories-card 
+    height: 167px
+
+  .categories-accessories 
+    width: 100%
+    height: 116px
+    margin: 30px 0 0 0
+
+  .topFooter 
+    flex-direction: column
+
+  .mediumFooter 
+    min-height: 614px
+  
+  .mediumFooterContainer 
+    flex-direction: column
+  
+  .MediumFooterLeft 
+    margin: 50px 0
+  
+  .MediumFooterRight 
+    margin-bottom: 100px
+    max-height: 137px
+
+  .card 
+    margin: 0 3px 48px 3px
+  
+@media (min-width: 415px) and (max-width: 767px) 
+  .container-logo 
+    background: none
+    flex-direction: column
+    justify-content: center
+
+  .theBrand 
+    max-width: 95vh
+
+  .cards 
+    flex-direction: column
+    align-items: center
+
+  .categories_cards 
+    flex-direction: column
+  
+  .categories-card 
+    margin-top: 2vh
+    width: 100%
+    height: 300px
+  
+  .categories-accessories 
+    background-position-x: center
+  
+@media (max-width: 414px) 
+  /* Мобильная версия Xs Max */
+  .container 
+    max-width: 95vw
+  
+  .container-logo 
+    background: none
+    flex-direction: column
+    justify-content: center
+
+  .theBrand 
+    max-width: 95vh
+
+  .categories_cards 
+    justify-content: center
+    flex-direction: column
+    margin: 20px 0 64px 0
+
+  .categories-card 
+    margin-top: 32px
+    width: 100%
+    height: 250px
+
+  .categories-accessories 
+    min-height: 111px
+    background-position-x: center
+
+  .cards 
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+  .card 
+    max-width: 350px
+    margin-bottom: 16px
+
+  .GoodCardImage 
+    max-width: 350px
+
+  .buttomFooter 
+    flex-direction: column-reverse
+    margin-top: 43px
+
+  .display-none 
+    display: none
+
+  .header-right 
+    display: flex
+    justify-content: center
+    align-items: center

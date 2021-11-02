@@ -1,0 +1,90 @@
+<meta charset="UTF-8">
+<script>
+    /* ----------- ES5 ООП ----------- */
+
+    // function Person(firstName, lastName, year){
+    //     this.name = firstName;
+    //     this.lastName = lastName;
+    //     this.year = year;
+    //     this.calcAge = () => {
+    //         console.log(new Date().getFullYear() - year);
+    //     }
+    // }
+
+    // let man1 = new Person('Иван', 'Иванов', 1990);
+    // man1.profession = 'Программист';
+    // man1.__proto__.profession = 'Админ';
+    /* Прототип - то, от какого объект наследуется объект */
+    // console.log(man1.profession); // Программист
+    /* JS сначала ищет profession в своем объекте, если нашел -> вывел ->
+     дальше не ищет 
+    Если не нашел -> ищет в прототипе объекта */
+
+
+    /*
+        При наследовании классов необходимо соблюдать
+        cледующий алгоритм:
+
+        1) В функции потомка нужно обязательно вызывать
+        конструктор базового класа
+        2) Если у потомка есть уникальные свойства, то их
+            нужно инициализировать
+        3) Импортировать прототип базового класса
+    */
+    // function Teacher(subject,...properties){
+    //     Person.apply(this, properties);
+    //     this.subject = subject; 
+    // }
+    // Teacher.prototype = Object.create(Person.prototype);
+    // Teacher.prototype.construct = Person;
+    
+    // let teacher = new Teacher('Информатика', 'Иван', 'Петров', 1995);
+    // console.log(teacher);
+
+
+    /* ----------- ES6 ООП ----------- */
+    class Person{
+        // конструктор - это метод, который вызывается при
+        // создании объекта класса
+        constructor(name, year){
+            this.name = name;
+            this.year = year;
+        }
+        #getAge(){ // с # к этому методу нет доступа из других классов
+            return new Date().getFullYear() - this.year;
+        }
+        static compareAge(m1,m2){ // static методы относятся к самому классу Person, а не к объекту
+                                    // Поэтому мы вызываем его от класса Person ( Person.compareAge(user1,user2); )
+            if(m1.year > m2.year){
+                console.log(`${m1.name} младше пользователя ${m2.name} на ${m1.year-m2.year}`);
+            }else{
+                console.log(`${m2.name} младше пользователя ${m1.name} на ${m2.year-m1.year}`);
+            }
+        }
+        info(){
+            return `Пользователь ${this.name} родился в ${this.year} году`;
+        }
+    }
+    // Если класс наследуется от класса, у которого есть конструктор с параметрами, то в классе потомке необходимо
+    // создавать конструктор и в нем вызывать базовый конструктор через super
+    class Teacher extends Person{ // Класс Teacher расширяет класс Person, то есть наследуемся от класса Person
+        constructor(name,year,subject){
+            super(name,year);
+            this.subject = subject;
+            this.info();
+        }
+        info(){
+            console.log(`${super.info()}. Он преподает предмет ${this.subject}`);
+        }
+    }
+
+    // let user1 = new Person('Иван', 1990);
+    let user2 = new Person('Андрей', 1992);
+    alert(user2.getAge());
+    // console.log(user);
+    // Person.compareAge(user1,user2);
+    
+    let t = new Teacher('Иван', 1978, 'Информатика');
+    t.getAge();
+</script>
+
