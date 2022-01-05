@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="sass/style.css">
+    <!-- <link rel="stylesheet" href="sass/catalog.css"> -->
+    <script defer src="scripts/render-index-products.js"></script>
+    <script defer src="scripts/burger-menu.js"></script>
+    <title>Интернет-магазин</title>
+</head>
+<body>
+    <!-- верхнее меню -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-left">
+                <a class="index-html-btn" href="index.html"><img src="img/main-menu-logo.svg" alt="logo"></a>
+                <a class="search-btn" href="#"><img src="img/menu-search.svg" alt="search"></a>
+            </div>
+            <div class="header-right">
+                <nav>
+                    <button class="burger"></button>
+                    <div class="overlay">
+                        <div class="menu">
+                            <h2 class="menu-style">menu</h1>
+                            <ul class="menu-list">
+                                <li class="menu-paragraph"><a href="#" class="menu-link">man</a>
+                                    <ul class="menu-list-inside">
+                                        <li class="menu-inside-item">Accessories</li>
+                                        <li class="menu-inside-item">Bags</li>
+                                        <li class="menu-inside-item">Denim</li>
+                                        <li class="menu-inside-item">T-Shirts</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item"><a href="#" class="menu-link">woman</a>
+                                    <ul class="menu-list-inside">
+                                        <li class="menu-inside-item">Accessories</li>
+                                        <li class="menu-inside-item">Jackets & Coats</li>
+                                        <li class="menu-inside-item">Polos</li>
+                                        <li class="menu-inside-item">T-Shirts</li>
+                                        <li class="menu-inside-item">Shirts</li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item"><a href="#" class="menu-link">kids</a>
+                                    <ul class="menu-list-inside">
+                                        <li class="menu-inside-item">Accessories</li>
+                                        <li class="menu-inside-item">Jackets & Coats</li>
+                                        <li class="menu-inside-item">Polos</li>
+                                        <li class="menu-inside-item">T-Shirts</li>
+                                        <li class="menu-inside-item">Shirts</li>
+                                        <li class="menu-inside-item">Bags</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <button class="menu-close-btn"></button>
+                        </div>
+                      </div>
+                </nav>
+                
+                <a class="display-none" href="#"><img src="img/account.svg" style="width: 29px; margin-right: 33px;" alt="sign-in"></a>
+                <a class="display-none" href="#"><img src="img/basket-empty.svg" style="width: 32px;" alt="basket"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ШАПКА -->
+    <div class="head">
+        <div class="container container-logo">
+            <div class="logo">
+                <h1 class="theBrand">The brand <br><span class="ofLuxerious">of luxerious <span class="fashion">fashion</span></span></h1>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Каталоговая часть страницы -->
+    <main class="container">
+    <!-- Карточки категорий товаров, промо/скидки -->
+        <ul class="categories_cards">
+            <li class="categories-card categories-for-womens">
+                <p class="promo_text">30% off</p>
+                <h3 class="promo_text_red">for women</h3>
+            </li>
+            <li class="categories-card categories-for-mens">
+                <p class="promo_text">hot deal</p>
+                <h3 class="promo_text_red">for women</h3>
+            </li>
+            <li class="categories-card categories-for-kids">
+                <p class="promo_text">new arrivals</p>
+                <h3 class="promo_text_red">for women</h3>
+            </li>
+            <li class="categories-card categories-accessories">
+                <p class="promo_text">LUXIROUS & TRENDY</p>
+                <h3 class="promo_text_red">ACCESORIES</h3>                
+            </li>
+        </ul>
+
+    <!-- Каталог -->
+        <h1 class="h1">Fetured Items</h1>
+        <p class="p">Shop for items based on what we featured in this week</p>
+        <section class="cards container">
+            <!-- Рендерится в JS -->
+        </section>
+        <div class="tac container"><a href="catalog.html"><button class = "button" type="button">Browse All Product</button></a></div>
+        
+    </main>
+
+<!-- Подвал -->
+    <footer class="footer">
+        <div class="topFooter container">
+            <div class="features-max-width">
+                <img src="img/footer-delivery-ico.svg" alt="delivery">
+                <h1 class="h1Footer">Free Delivery</h1>
+                <p class="pFooter">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+            </div>
+            <div class="features-max-width">
+                <img src="img/footer-sale-ico.svg" alt="sale">
+                <h1 class="h1Footer">Sales & discounts</h1>
+                <p class="pFooter">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+            </div>
+            <div class="features-max-width">
+                <img src="img/footer-quality-ico.svg" alt="quality">
+                <h1 class="h1Footer">Quality assurance</h1>
+                <p class="pFooter">Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+            </div>
+        </div>
+        <div class="mediumFooter">
+            <div class="container mediumFooterContainer">
+                <div class="MediumFooterLeft">
+                    <img src="img/face.png" alt="face">
+                    <p class="p mediumFooterText">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, <span>a pulvinar purus condimentum“</span></p>
+                </div>
+                <div class="MediumFooterRight">
+                    <form>
+                        <p class="MediumFooterRightParagraph1">SUBSCRIBE</p>
+                        <p class="MediumFooterRightParagraph2">FOR OUR NEWLETTER AND PROMOTION</p>
+                        <div class = "subscribe-form">
+                            <input class = "subscribe-form-email" type="email" name="email" placeholder="Enter Your Email">
+                            <button type="submit" class = "subscribe-form-button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="buttomFooter container">
+            <div class="p"><p>© 2021  Brand  All Rights Reserved.</p></div>
+            <div class="socials-links">
+                <div class="social-links-button"><a href="#"><img class="social-links-svg" src="img/social-facebook-ico.svg" alt="Our facebook"></a></div>
+                <div class="social-links-button"><a href="#"><img class="social-links-svg" src="img/social-instagram-ico.svg" alt="Our instagram"></a></div>
+                <div class="social-links-button"><a href="#"><img class="social-links-svg" src="img/social-pinterest-ico.svg" alt="Our pinterest"></a></div>
+                <div class="social-links-button"><a href="#"><img class="social-links-svg" src="img/social-twitter-ico.svg" alt="Our twitter"></a></div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+<!-- added branch to create pull request -->

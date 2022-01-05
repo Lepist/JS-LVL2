@@ -1,0 +1,97 @@
+.catalog-head
+    min-height: 150px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.catalog-head-h2
+    text-transform: uppercase
+    font-size: 24px
+    font-style: normal
+    font-weight: normal
+    line-height: 29px
+    color: #F16D7F
+
+.catalog-head-p
+    text-transform: uppercase
+    font-style: normal
+    font-weight: 300
+    font-size: 14px
+    line-height: 17px
+    color: #636363
+
+.catalog-head-p-red
+    font-weight: 700
+    color: #F16D7F
+
+.pages
+    margin-bottom: 95px
+    text-align: center
+
+.filters-sizes-prices
+    display: flex
+    justify-content: space-between
+    text-transform: uppercase
+    margin: 51px 0 65px 0
+
+.filters
+    flex-basis: 33%
+    padding: 0 11px 0 20px
+    box-sizing: border-box
+    display: flex
+    align-items: center
+
+.filters-p
+    font-style: normal
+    font-weight: 600
+    font-size: 14.5px
+    line-height: 17px
+    margin: 0
+
+.filters-button
+    border: none
+    background-color: white
+    height: 22.4px
+
+.sizes-prices
+    flex-basis: 67%
+    display: flex
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 17px
+    color: #6F6E6E
+    
+.margin-0
+    margin: 0
+
+@media (max-width: 1190px) /* Версия для десктопа поменьше FUll HD или перевернутого экрана*/
+    .sizes-prices
+        justify-content: right
+    
+@media (max-width: 414px) /* Мобильная версия Xs Max */
+    .catalog-head
+        flex-direction: column
+        justify-content:flex-start
+    
+    .catalog-head-h2
+        margin-top: 26px
+    
+    .filters-p
+        display: none
+    
+    .filters
+        padding: 0
+    
+    .filters-button-burger
+        width: 37.5px
+        height: 25px
+    
+    .margin-0
+        padding-left: 20px
+    
+    .filters
+        flex-basis: 10%
+    
+    .sizes-prices
+        flex-basis: 90%
